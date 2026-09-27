@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ANITS - Central Placement Portal</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #dfe8ed;
+        }
+
+        header {
+            background-color: #23475a;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .login-box {
+            width: 330px;
+            margin: 50px auto;
+            padding: 25px;
+            background-color: white;
+            border-radius: 5px;
+            box-shadow: 0 4px 15px #777;
+        }
+
+        h3 {
+            text-align: center;
+            color: #003b80;
+        }
+
+        label {
+            display: block;
+            color: #003b80;
+            margin-top: 12px;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            box-sizing: border-box;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            margin-top: 20px;
+            border: none;
+            background-color: #337ab7;
+            color: white;
+            cursor: pointer;
+        }
+
+        #error {
+            color: red;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="header">
+        ANITS - Central Placement Portal
+    </div>
+
+    <div class="login-box">
+        <h3>User Login</h3>
+
+        <form onsubmit="return validateLogin()">
+
+            <label>Username</label>
+            <input type="text"
+                   id="username"
+                   placeholder="Enter username">
+
+            <label>Password</label>
+            <input type="password"
+                   id="password"
+                   placeholder="Enter password">
+
+            <button type="submit">Login</button>
+
+            <p id="error"></p>
+
+        </form>
+    </div>
+
+    <script>
+        function validateLogin() {
+
+            let username =
+                document.getElementById("username").value.trim();
+
+            let password =
+                document.getElementById("password").value.trim();
+
+            let error =
+                document.getElementById("error");
+
+            if (username == "") {
+                error.innerHTML = "Please enter username";
+                return false;
+            }
+
+            if (password == "") {
+                error.innerHTML = "Please enter password";
+                return false;
+            }
+
+            if (username.length < 3) {
+                error.innerHTML =
+                    "Username must contain at least 3 characters";
+                return false;
+            }
+
+            if (password.length < 6) {
+                error.innerHTML =
+                    "Password must contain at least 6 characters";
+                return false;
+            }
+
+            window.location.href = "login.html";
+            return false;
+        }
+    </script>
+
+</body>
+</html>

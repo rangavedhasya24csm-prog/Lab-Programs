@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>ANITS Placement Portal</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #dfe8ed;
+        }
+
+        .header {
+            background-color: #23475a;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .navbar {
+            background-color: #16759b;
+            text-align: center;
+            padding: 10px;
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            margin: 15px;
+        }
+
+        .content {
+            width: 70%;
+            margin: 40px auto;
+            padding: 25px;
+            background-color: white;
+            border-radius: 5px;
+        }
+
+        .success {
+            color: green;
+        }
+
+        .notice {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #f7f7dc;
+            border-left: 5px solid #f0ad4e;
+        }
+
+        .footer {
+            text-align: center;
+            color: white;
+            background-color: #23475a;
+            padding: 15px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="header">
+        <h2>Anil Neerukonda Institute of Technology & Sciences</h2>
+        <p>Campus Placement Portal</p>
+    </div>
+
+    <div class="navbar">
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Apply</a>
+        <a href="#">Results</a>
+        <a href="#">Contact</a>
+    </div>
+
+    <div class="content">
+
+        <h2 class="success">
+            Login Successful!
+        </h2>
+
+        <h3>
+            Welcome to Anits Central Placement Portal
+        </h3>
+
+        <p>
+            <b>Login Time:</b>
+            <span id="loginTime"></span>
+        </p>
+
+        <h3>Good Night</h3>
+
+        <div class="notice">
+            <h3>Important Notice</h3>
+            <ul>
+                <li>Check placement updates regularly.</li>
+                <li>Attend the placement activities on time.</li>
+                <li>Keep your profile and documents updated.</li>
+            </ul>
+        </div>
+
+    </div>
+
+    <div class="footer">
+        <p>
+            © 2026 ANITS | Department of Placement & Training
+        </p>
+    </div>
+
+    <script>
+        let currentDate = new Date();
+
+        document.getElementById("loginTime").innerHTML =
+            currentDate.toLocaleString();
+
+        let hour = currentDate.getHours();
+
+        if (hour < 12) {
+            document.querySelector(".content h3").innerHTML =
+                "Good Morning";
+        }
+        else if (hour < 17) {
+            document.querySelector(".content h3").innerHTML =
+                "Good Afternoon";
+        }
+        else {
+            document.querySelector(".content h3").innerHTML =
+                "Good Night";
+        }
+    </script>
+
+</body>
+</html>
