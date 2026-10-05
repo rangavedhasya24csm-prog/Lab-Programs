@@ -1,7 +1,20 @@
-# Question 5: Modules in Node.js
+# Question 9: MongoDB CRUD API
 
-This example splits a Node.js program into ES modules. `students.js` exports a default value, and `studentUtils.js` exports named functions that `index.js` imports and uses. The entry point also demonstrates Node's built-in `os`, `path`, and `dns` modules.
+Express and Mongoose API for creating, reading, updating, and deleting students.
 
 ## Run
 
-Run `npm start` in this folder. No additional packages are required.
+1. Start MongoDB locally.
+2. Run `npm install` in this folder.
+3. Run `npm start`.
+
+The API listens on `http://localhost:5000`. Set `MONGODB_URI` or `PORT` to override the defaults.
+
+## Endpoints
+
+- `GET /` - API status and student endpoint
+- `GET /students` - list students
+- `GET /students/:id` - read one student
+- `POST /students` - create with JSON `{ "name": "Asha", "course": "Node.js" }`
+- `PUT /students/:id` - replace/update student fields
+- `DELETE /students/:id` - delete student
